@@ -5,7 +5,8 @@ O sistema é capaz de realizar criação, consulta, edição e remoção de tare
 
 ## Back-End
 
-O presente repositório se trata do back-end do sistema. Trata-se de uma API REST integrada com CORS, desenvolvida em Python com o microframework Flask
+O presente repositório se trata do back-end do sistema. Trata-se de uma API REST integrada com CORS, desenvolvida em Python com o microframework Flask.
+
 Por ser um programa de menor dimensão e escalabilidade, a API é conectada a um banco de dados em SQLite. A API gerencia os dados de cada tarefa (id, título, descrição, status e data da publicação).
 
 ## Front-end do projeto
