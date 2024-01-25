@@ -3,6 +3,10 @@ from src.models import Task
 from flask import jsonify, request
 import datetime
 
+@app.route("/", methods=["GET"])
+def hello():
+    return 'Hello from tasks-list-api!'
+
 @app.route("/tasks", methods=["GET"])
 def findManyTasks():
     all_tasks = Task.query.all()
