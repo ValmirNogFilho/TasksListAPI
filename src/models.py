@@ -1,6 +1,5 @@
 from src import db
 import datetime
-from src.status import Status
 
 class Task(db.Model):
 
