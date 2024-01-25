@@ -10,6 +10,8 @@ def hello():
 @app.route("/tasks", methods=["GET"])
 def findManyTasks():
     all_tasks = Task.query.all()
+    if not all_tasks:
+        return jsonify([]), 200
     all_formatted_tasks = [task.as_dict() for task in all_tasks]
     return jsonify(
         all_formatted_tasks
