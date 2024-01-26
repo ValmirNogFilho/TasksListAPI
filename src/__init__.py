@@ -1,11 +1,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import os 
 
 app = Flask(__name__)
 app.app_context().push()
 app.config["SECRET_KEY"] = "1fbc7cd09f3e7b4d3f9c6eed"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("POSTGRES_URL")
 
 db = SQLAlchemy(app)
 
