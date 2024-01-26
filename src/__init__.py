@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 app.app_context().push()
-app.config["SECRET_KEY"] = "1fbc7cd09f3e7b4d3f9c6eed"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("POSTGRES_URL")
 
 db = SQLAlchemy(app)
