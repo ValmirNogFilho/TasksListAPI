@@ -6,7 +6,8 @@ import os
 app = Flask(__name__)
 app.app_context().push()
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("POSTGRES_URL", "sqlite:///test.db")
+postgres_url = "postgresql"+ os.environ.get("POSTGRES_URL")[8:] #psycopg2 doesn't supports "postgres" at the beginning of the url
+app.config["SQLALCHEMY_DATABASE_URI"] = postgres_url
 
 db = SQLAlchemy(app)
 
