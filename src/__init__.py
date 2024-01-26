@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 app.app_context().push()
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("POSTGRES_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("POSTGRES_URL", "sqlite:///test.db")
 
 db = SQLAlchemy(app)
 
